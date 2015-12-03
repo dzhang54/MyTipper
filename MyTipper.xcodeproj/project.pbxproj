@@ -15,6 +15,7 @@
 		653980D31C10DF9C0061A575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653980D11C10DF9C0061A575 /* LaunchScreen.storyboard */; };
 		653980DE1C10DF9D0061A575 /* MyTipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653980DD1C10DF9D0061A575 /* MyTipperTests.swift */; };
 		653980E91C10DF9D0061A575 /* MyTipperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653980E81C10DF9D0061A575 /* MyTipperUITests.swift */; };
+		653981771C10F2250061A575 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981761C10F2250061A575 /* HistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		653980E41C10DF9D0061A575 /* MyTipperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTipperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653980E81C10DF9D0061A575 /* MyTipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTipperUITests.swift; sourceTree = "<group>"; };
 		653980EA1C10DF9D0061A575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653981761C10F2250061A575 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		653980B91C10DF9C0061A575 = {
 			isa = PBXGroup;
 			children = (
+				653981761C10F2250061A575 /* HistoryTableViewController.swift */,
 				653980C41C10DF9C0061A575 /* MyTipper */,
 				653980DC1C10DF9D0061A575 /* MyTipperTests */,
 				653980E71C10DF9D0061A575 /* MyTipperUITests */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653981771C10F2250061A575 /* HistoryTableViewController.swift in Sources */,
 				653980C81C10DF9C0061A575 /* ViewController.swift in Sources */,
 				653980C61C10DF9C0061A575 /* AppDelegate.swift in Sources */,
 				653980CE1C10DF9C0061A575 /* MyTipper.xcdatamodeld in Sources */,
@@ -486,6 +490,7 @@
 				653980EF1C10DF9D0061A575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		653980F01C10DF9D0061A575 /* Build configuration list for PBXNativeTarget "MyTipperTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				653980F21C10DF9D0061A575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		653980F31C10DF9D0061A575 /* Build configuration list for PBXNativeTarget "MyTipperUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +508,7 @@
 				653980F51C10DF9D0061A575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
