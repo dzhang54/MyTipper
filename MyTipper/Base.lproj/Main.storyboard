@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztm-DM-6GX">
-                                <rect key="frame" x="10" y="514" width="34" height="34"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="MCi-l9-CPf"/>
-                                    <constraint firstAttribute="width" constant="34" id="Utd-Bf-sRo"/>
-                                </constraints>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Image-2"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="right" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="z8o-JF-i39" userLabel="myField">
                                 <rect key="frame" x="10" y="72" width="300" height="80"/>
                                 <animations/>
@@ -41,6 +31,7 @@
                                 <rect key="frame" x="266" y="515" width="39" height="33"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="7iw-wU-zZr"/>
                                     <constraint firstAttribute="width" constant="39" id="WG0-We-SHs"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Image"/>
@@ -121,7 +112,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-ST-EZ1" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-ST-EZ1" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
                                 <rect key="frame" x="49" y="378" width="240" height="46"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.37414121627807617" green="0.8992735743522644" blue="0.90992468595504761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,12 +126,12 @@
                             <constraint firstItem="z8o-JF-i39" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="1be-sG-7Pa"/>
                             <constraint firstItem="zRp-sk-cUx" firstAttribute="top" secondItem="e95-DO-PsP" secondAttribute="bottom" constant="28" id="29C-ve-AgB"/>
                             <constraint firstItem="e95-DO-PsP" firstAttribute="top" secondItem="GtU-wP-1UN" secondAttribute="bottom" constant="26" id="29i-ab-OW3"/>
-                            <constraint firstItem="Ztm-DM-6GX" firstAttribute="bottom" secondItem="KYP-u5-t1T" secondAttribute="bottom" id="2Jm-lL-ad9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KYP-u5-t1T" secondAttribute="trailing" constant="-1" id="4dN-7v-2Je"/>
                             <constraint firstItem="OgF-zs-S6f" firstAttribute="top" secondItem="dWk-3N-g4X" secondAttribute="bottom" constant="8" symbolic="YES" id="58N-TH-Nic"/>
                             <constraint firstItem="iVS-Ew-L14" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BuN-GE-c1e"/>
                             <constraint firstItem="iVS-Ew-L14" firstAttribute="trailing" secondItem="GtU-wP-1UN" secondAttribute="trailing" constant="-3" id="DHn-Uk-aZG"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="top" secondItem="5hx-Ib-ZRt" secondAttribute="bottom" constant="10" id="DJt-Lb-3vq"/>
+                            <constraint firstItem="KYP-u5-t1T" firstAttribute="top" secondItem="qjd-ST-EZ1" secondAttribute="bottom" constant="91" id="HUN-mC-9ju"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="trailing" secondItem="KYP-u5-t1T" secondAttribute="trailing" id="HgN-Gj-z0z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e95-DO-PsP" secondAttribute="trailing" constant="4" id="IF8-NH-SGV"/>
                             <constraint firstItem="5hx-Ib-ZRt" firstAttribute="centerY" secondItem="GtU-wP-1UN" secondAttribute="centerY" id="Jun-FM-Jkp"/>
@@ -149,14 +140,11 @@
                             <constraint firstItem="5hx-Ib-ZRt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="214" id="OUl-fX-iNF"/>
                             <constraint firstItem="OgF-zs-S6f" firstAttribute="top" secondItem="5hx-Ib-ZRt" secondAttribute="bottom" constant="23" id="ZPt-kD-aWz"/>
                             <constraint firstItem="iVS-Ew-L14" firstAttribute="top" secondItem="z8o-JF-i39" secondAttribute="bottom" constant="8" symbolic="YES" id="bcA-fu-rhh"/>
-                            <constraint firstItem="Ztm-DM-6GX" firstAttribute="centerX" secondItem="OgF-zs-S6f" secondAttribute="centerX" constant="-29" id="bl8-zv-Zgw"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="top" secondItem="mTn-XT-yZe" secondAttribute="bottom" constant="8" symbolic="YES" id="ehz-wi-XyP"/>
                             <constraint firstItem="e95-DO-PsP" firstAttribute="top" secondItem="OgF-zs-S6f" secondAttribute="top" id="gjh-RD-FWb"/>
-                            <constraint firstItem="iVS-Ew-L14" firstAttribute="leading" secondItem="Ztm-DM-6GX" secondAttribute="leading" constant="10" id="h2c-hb-SJf"/>
-                            <constraint firstAttribute="bottom" secondItem="Ztm-DM-6GX" secondAttribute="bottom" constant="20" symbolic="YES" id="hmi-fF-zb9"/>
-                            <constraint firstItem="Ztm-DM-6GX" firstAttribute="centerY" secondItem="KYP-u5-t1T" secondAttribute="centerY" id="ndH-4W-yLP"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="leading" secondItem="z8o-JF-i39" secondAttribute="leading" id="tUi-ND-Zjc"/>
                             <constraint firstItem="zRp-sk-cUx" firstAttribute="trailing" secondItem="e95-DO-PsP" secondAttribute="trailing" id="vOc-4g-9Jh"/>
+                            <constraint firstAttribute="bottom" secondItem="KYP-u5-t1T" secondAttribute="bottom" constant="20" symbolic="YES" id="vRN-Qm-RQ1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iVS-Ew-L14" secondAttribute="trailing" constant="3" id="wbU-jf-lDz"/>
                             <constraint firstItem="iVS-Ew-L14" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="160" id="x5N-cj-Dir"/>
                             <constraint firstItem="z8o-JF-i39" firstAttribute="top" secondItem="Wy6-0O-xKZ" secondAttribute="bottom" constant="8" symbolic="YES" id="z2F-zL-UVo"/>
@@ -167,6 +155,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="My Tipper" id="7e7-Tp-Ieh">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="0Fg-UG-OTk">
+                            <connections>
+                                <segue destination="bLy-n8-8Ym" kind="unwind" unwindAction="unwindToMealList:" id="GEu-vb-OdS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="History" id="PVf-z2-b59">
                             <connections>
                                 <segue destination="lnQ-WW-6z9" kind="push" id="Pg0-6D-niC"/>
@@ -177,13 +170,14 @@
                         <outlet property="billField" destination="z8o-JF-i39" id="2i6-P2-aMa"/>
                         <outlet property="personStepper" destination="zRp-sk-cUx" id="bf5-sI-cmy"/>
                         <outlet property="ratingControl" destination="qjd-ST-EZ1" id="XqI-Xh-WQD"/>
-                        <outlet property="saveButton" destination="Ztm-DM-6GX" id="2TX-zo-09W"/>
+                        <outlet property="saveButton" destination="0Fg-UG-OTk" id="2Aj-DL-iUc"/>
                         <outlet property="tipControl" destination="iVS-Ew-L14" id="f6o-Nu-L3K"/>
                         <outlet property="tipLabell" destination="GtU-wP-1UN" id="beU-em-bCA"/>
                         <outlet property="totalLabel" destination="e95-DO-PsP" id="1Bu-Ao-d5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="bLy-n8-8Ym" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="R7P-CC-KtD">
                     <connections>
                         <action selector="onTap:" destination="BYZ-38-t0r" id="ode-l4-ytk"/>
@@ -401,7 +395,6 @@
     <resources>
         <image name="Image" width="150" height="150"/>
         <image name="Image-1" width="150" height="150"/>
-        <image name="Image-2" width="64" height="64"/>
         <image name="Image-4" width="162" height="162"/>
     </resources>
     <color key="tintColor" red="0.16630924201059483" green="0.37354073634073592" blue="1" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>

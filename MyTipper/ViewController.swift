@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var personStepper: UIStepper!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var meal: Meal?
     
@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         tipLabell.text = "$0.00"
         totalLabel.text = "$0.00"
         
+        billField.delegate = self
+        checkValidMealName()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if  saveButton === sender {
@@ -41,6 +43,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.enabled = false
+    }
+    func checkValidMealName() {
+        // Disable the Save button if the text field is empty.
+        let text = billField.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidMealName()
+    }
+
 
     override func viewWillAppear(animated: Bool) {
         // show keyboard
