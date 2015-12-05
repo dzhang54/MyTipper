@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var ratingControl: GoodOrBad!
     @IBOutlet weak var billField: UITextField!
@@ -24,6 +24,20 @@ class ViewController: UIViewController {
         totalLabel.text = "$0.00"
         
     }
+    override func viewWillAppear(animated: Bool) {
+        // show keyboard
+        billField.becomeFirstResponder()
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let tipIndex: Int? = defaults.integerForKey("tipDefault")
+        
+        if let tip = tipIndex {
+            tipControl.selectedSegmentIndex = tip
+        }
+        else {
+            tipControl.selectedSegmentIndex = 0
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,6 +45,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setObject(billField.text, forKey: "billAmount")
+        defaults.synchronize()
         
         let tipPercentages = [0.10,0.14,0.18,0.2,0.22]
         let tipPercent = tipPercentages[tipControl.selectedSegmentIndex]

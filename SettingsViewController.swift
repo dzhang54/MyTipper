@@ -15,14 +15,31 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        tipControl.selectedSegmentIndex = defaults.integerForKey("tipDefault")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func onValueChanged(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setInteger(tipControl.selectedSegmentIndex, forKey: "tipDefault")
+        defaults.synchronize()
+        
+    }
+    
+    //Facebook and Twitter buttons
     
     @IBAction func tweetBtn(sender: AnyObject) {
         if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
