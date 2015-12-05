@@ -15,7 +15,11 @@
 		653980D31C10DF9C0061A575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653980D11C10DF9C0061A575 /* LaunchScreen.storyboard */; };
 		653980DE1C10DF9D0061A575 /* MyTipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653980DD1C10DF9D0061A575 /* MyTipperTests.swift */; };
 		653980E91C10DF9D0061A575 /* MyTipperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653980E81C10DF9D0061A575 /* MyTipperUITests.swift */; };
-		653981771C10F2250061A575 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981761C10F2250061A575 /* HistoryTableViewController.swift */; };
+		653981791C10F4D30061A575 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981781C10F4D30061A575 /* MealTableViewCell.swift */; };
+		6539817B1C10F77A0061A575 /* GoodOrBad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817A1C10F77A0061A575 /* GoodOrBad.swift */; };
+		6539817D1C10FF070061A575 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817C1C10FF070061A575 /* MealTableViewController.swift */; };
+		653981F81C12CA430061A575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981F71C12CA430061A575 /* SettingsViewController.swift */; };
+		653981FB1C12CC240061A575 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +54,11 @@
 		653980E41C10DF9D0061A575 /* MyTipperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTipperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653980E81C10DF9D0061A575 /* MyTipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTipperUITests.swift; sourceTree = "<group>"; };
 		653980EA1C10DF9D0061A575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		653981761C10F2250061A575 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		653981781C10F4D30061A575 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = ../MealTableViewCell.swift; sourceTree = "<group>"; };
+		6539817A1C10F77A0061A575 /* GoodOrBad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodOrBad.swift; sourceTree = "<group>"; };
+		6539817C1C10FF070061A575 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		653981F71C12CA430061A575 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653981FB1C12CC240061A575 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +90,11 @@
 		653980B91C10DF9C0061A575 = {
 			isa = PBXGroup;
 			children = (
-				653981761C10F2250061A575 /* HistoryTableViewController.swift */,
 				653980C41C10DF9C0061A575 /* MyTipper */,
 				653980DC1C10DF9D0061A575 /* MyTipperTests */,
 				653980E71C10DF9D0061A575 /* MyTipperUITests */,
 				653980C31C10DF9C0061A575 /* Products */,
+				653981F91C12CBF80061A575 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +111,10 @@
 		653980C41C10DF9C0061A575 /* MyTipper */ = {
 			isa = PBXGroup;
 			children = (
+				653981F71C12CA430061A575 /* SettingsViewController.swift */,
+				6539817A1C10F77A0061A575 /* GoodOrBad.swift */,
+				653981781C10F4D30061A575 /* MealTableViewCell.swift */,
+				6539817C1C10FF070061A575 /* MealTableViewController.swift */,
 				653980C51C10DF9C0061A575 /* AppDelegate.swift */,
 				653980C71C10DF9C0061A575 /* ViewController.swift */,
 				653980C91C10DF9C0061A575 /* Main.storyboard */,
@@ -129,6 +142,15 @@
 				653980EA1C10DF9D0061A575 /* Info.plist */,
 			);
 			path = MyTipperUITests;
+			sourceTree = "<group>";
+		};
+		653981F91C12CBF80061A575 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			path = MyTipper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653981771C10F2250061A575 /* HistoryTableViewController.swift in Sources */,
+				653981791C10F4D30061A575 /* MealTableViewCell.swift in Sources */,
 				653980C81C10DF9C0061A575 /* ViewController.swift in Sources */,
+				653981F81C12CA430061A575 /* SettingsViewController.swift in Sources */,
+				6539817B1C10F77A0061A575 /* GoodOrBad.swift in Sources */,
 				653980C61C10DF9C0061A575 /* AppDelegate.swift in Sources */,
+				6539817D1C10FF070061A575 /* MealTableViewController.swift in Sources */,
 				653980CE1C10DF9C0061A575 /* MyTipper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +430,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyTipper",
+				);
 				INFOPLIST_FILE = MyTipper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielzhang.MyTipper;
@@ -416,6 +445,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyTipper",
+				);
 				INFOPLIST_FILE = MyTipper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielzhang.MyTipper;

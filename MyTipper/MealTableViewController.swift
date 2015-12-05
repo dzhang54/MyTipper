@@ -1,5 +1,5 @@
 //
-//  HistoryTableViewController.swift
+//  MealTableViewController.swift
 //  MyTipper
 //
 //  Created by Daniel Zhang on 12/3/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTableViewController: UITableViewController {
+class MealTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
