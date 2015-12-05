@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var personStepper: UIStepper!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var meal: Meal?
     
     
     override func viewDidLoad() {
@@ -25,6 +28,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalLabel.text = "$0.00"
         
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if  saveButton === sender {
+            let totalz = Double(totalLabel.text!)
+            let personz = Int(personStepper.value)
+            let datez = String(NSDate(timeIntervalSinceNow: 0))
+            let ratingz = ratingControl.rating
+            
+                meal = Meal(date: datez, people: personz, rating: ratingz, totalBill: totalz!)
+            
+            
+        }
+
+    }
+
     override func viewWillAppear(animated: Bool) {
         // show keyboard
         billField.becomeFirstResponder()
@@ -74,14 +91,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
-    @IBAction func saveButtonPressed(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        defaults.setDouble(NSString(string: totalLabel.text!).doubleValue, forKey: "totalValue")
-        defaults.setDouble(personStepper.value, forKey: "numberOfPersons")
-        
-        
-        
-    }
+  
 }
 

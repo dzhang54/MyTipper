@@ -27,9 +27,6 @@
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="Image-2"/>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VMC-f9-aUi"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="right" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="z8o-JF-i39" userLabel="myField">
                                 <rect key="frame" x="10" y="72" width="300" height="80"/>
@@ -124,6 +121,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-ST-EZ1" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
+                                <rect key="frame" x="49" y="378" width="240" height="46"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.37414121627807617" green="0.8992735743522644" blue="0.90992468595504761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.37414121627807617" green="0.8992735743522644" blue="0.90992468595504761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,6 +176,8 @@
                     <connections>
                         <outlet property="billField" destination="z8o-JF-i39" id="2i6-P2-aMa"/>
                         <outlet property="personStepper" destination="zRp-sk-cUx" id="bf5-sI-cmy"/>
+                        <outlet property="ratingControl" destination="qjd-ST-EZ1" id="XqI-Xh-WQD"/>
+                        <outlet property="saveButton" destination="Ztm-DM-6GX" id="2TX-zo-09W"/>
                         <outlet property="tipControl" destination="iVS-Ew-L14" id="f6o-Nu-L3K"/>
                         <outlet property="tipLabell" destination="GtU-wP-1UN" id="beU-em-bCA"/>
                         <outlet property="totalLabel" destination="e95-DO-PsP" id="1Bu-Ao-d5w"/>
