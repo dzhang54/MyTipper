@@ -19,7 +19,6 @@
 		6539817B1C10F77A0061A575 /* GoodOrBad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817A1C10F77A0061A575 /* GoodOrBad.swift */; };
 		6539817D1C10FF070061A575 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817C1C10FF070061A575 /* MealTableViewController.swift */; };
 		653981F81C12CA430061A575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981F71C12CA430061A575 /* SettingsViewController.swift */; };
-		653981FB1C12CC240061A575 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		6539817A1C10F77A0061A575 /* GoodOrBad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodOrBad.swift; sourceTree = "<group>"; };
 		6539817C1C10FF070061A575 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		653981F71C12CA430061A575 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
-		653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653981FB1C12CC240061A575 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +91,6 @@
 				653980DC1C10DF9D0061A575 /* MyTipperTests */,
 				653980E71C10DF9D0061A575 /* MyTipperUITests */,
 				653980C31C10DF9C0061A575 /* Products */,
-				653981F91C12CBF80061A575 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,15 +138,6 @@
 				653980EA1C10DF9D0061A575 /* Info.plist */,
 			);
 			path = MyTipperUITests;
-			sourceTree = "<group>";
-		};
-		653981F91C12CBF80061A575 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				653981FA1C12CC240061A575 /* FBSDKCoreKit.framework */,
-			);
-			name = Frameworks;
-			path = MyTipper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
