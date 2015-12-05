@@ -12,6 +12,7 @@ import Social
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var defaultTaxField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class SettingsViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
-        
         tipControl.selectedSegmentIndex = defaults.integerForKey("tipDefault")
         
     }

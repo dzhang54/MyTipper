@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tipLabell: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var personStepper: UIStepper!
     
     
     override func viewDidLoad() {
@@ -50,16 +51,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         defaults.setObject(billField.text, forKey: "billAmount")
         defaults.synchronize()
+        var total = 0.0
+        personStepper.minimumValue = 1
         
         let tipPercentages = [0.10,0.14,0.18,0.2,0.22]
         let tipPercent = tipPercentages[tipControl.selectedSegmentIndex]
         
         let billAmount = NSString(string: billField.text!).doubleValue
         let tip = billAmount * tipPercent
-        let total = billAmount + tip
-        
-        tipLabell.text = String(format: "%.2f", tip)
-        totalLabel.text = String(format: "%.2f", total)
+        if personStepper.value == 1 {
+             total = (billAmount + tip)
+        }else{
+             total = (billAmount + tip) / personStepper.value
+        }
+        tipLabell.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total) + "/" + String(Int(personStepper.value)) + " " + "person(s)"
         
         
         
