@@ -19,6 +19,7 @@
 		6539817B1C10F77A0061A575 /* GoodOrBad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817A1C10F77A0061A575 /* GoodOrBad.swift */; };
 		6539817D1C10FF070061A575 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539817C1C10FF070061A575 /* MealTableViewController.swift */; };
 		653981F81C12CA430061A575 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981F71C12CA430061A575 /* SettingsViewController.swift */; };
+		653981FD1C1392170061A575 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653981FC1C1392170061A575 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		6539817A1C10F77A0061A575 /* GoodOrBad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodOrBad.swift; sourceTree = "<group>"; };
 		6539817C1C10FF070061A575 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		653981F71C12CA430061A575 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		653981FC1C1392170061A575 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				653981F71C12CA430061A575 /* SettingsViewController.swift */,
 				6539817A1C10F77A0061A575 /* GoodOrBad.swift */,
 				653981781C10F4D30061A575 /* MealTableViewCell.swift */,
+				653981FC1C1392170061A575 /* Meal.swift */,
 				6539817C1C10FF070061A575 /* MealTableViewController.swift */,
 				653980C51C10DF9C0061A575 /* AppDelegate.swift */,
 				653980C71C10DF9C0061A575 /* ViewController.swift */,
@@ -275,6 +278,7 @@
 				653980C81C10DF9C0061A575 /* ViewController.swift in Sources */,
 				653981F81C12CA430061A575 /* SettingsViewController.swift in Sources */,
 				6539817B1C10F77A0061A575 /* GoodOrBad.swift in Sources */,
+				653981FD1C1392170061A575 /* Meal.swift in Sources */,
 				653980C61C10DF9C0061A575 /* AppDelegate.swift in Sources */,
 				6539817D1C10FF070061A575 /* MealTableViewController.swift in Sources */,
 				653980CE1C10DF9C0061A575 /* MyTipper.xcdatamodeld in Sources */,

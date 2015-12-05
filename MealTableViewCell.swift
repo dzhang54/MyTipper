@@ -10,6 +10,7 @@ import UIKit
 
 class MealTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var totalBillLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -25,5 +26,6 @@ class MealTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

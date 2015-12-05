@@ -74,5 +74,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setDouble(NSString(string: totalLabel.text!).doubleValue, forKey: "totalValue")
+        defaults.setDouble(personStepper.value, forKey: "numberOfPersons")
+        
+        
+        
+    }
 }
 

@@ -9,6 +9,7 @@
 import UIKit
 
 class MealTableViewController: UITableViewController {
+    var meals = [Meal]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,15 @@ class MealTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        loadSamplePastMeals()
+    }
+    func loadSamplePastMeals(){
+        let meal1 = Meal(date: "12/1/2015", people: 2, rating: 3, totalBill: 32.20)!
+        let meal2 = Meal(date: "12/2/2015", people: 1, rating: 4, totalBill: 5.60)!
+        let meal3 = Meal(date: "12/3/2015", people: 3, rating: 2, totalBill: 2.00)!
+        
+        meals += [meal1, meal2, meal3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +38,30 @@ class MealTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return meals.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellIdentifier = "MealTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
+        
+        // Fetches the appropriate meal for the data source layout.
+        let meal = meals[indexPath.row]
 
         // Configure the cell...
-
+        cell.dateLabel.text = meal.date
+        cell.numberOfPeopleLabel.text = String(format: "%.2d people", meal.people)
+        cell.totalBillLabel.text = String(format: "$%.2f", meal.totalBill)
+        cell.ratingControl.rating = meal.rating
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +98,14 @@ class MealTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+   // }
+    
 
 }

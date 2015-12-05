@@ -27,6 +27,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="Image-2"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VMC-f9-aUi"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="right" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="z8o-JF-i39" userLabel="myField">
                                 <rect key="frame" x="10" y="72" width="300" height="80"/>
@@ -185,25 +188,25 @@
             </objects>
             <point key="canvasLocation" x="645" y="510"/>
         </scene>
-        <!--Table View Controller-->
+        <!--History-->
         <scene sceneID="Mzy-IY-J4Y">
             <objects>
-                <tableViewController id="lnQ-WW-6z9" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ugK-0f-rMP">
+                <tableViewController id="lnQ-WW-6z9" customClass="MealTableViewController" customModule="MyTipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="ugK-0f-rMP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="hmP-QO-QMd" customClass="MealTableViewCell" customModule="MyTipper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="320" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="80" id="hmP-QO-QMd" customClass="MealTableViewCell" customModule="MyTipper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hmP-QO-QMd" id="DZh-O5-X2G">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="hmP-QO-QMd" id="DZh-O5-X2G">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-0X-JSC">
-                                            <rect key="frame" x="0.0" y="-5" width="84" height="35.5"/>
+                                            <rect key="frame" x="0.0" y="-8" width="84" height="35.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,12 +243,13 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="lnQ-WW-6z9" id="Rxu-ly-eSF"/>
+                            <outlet property="dataSource" destination="lnQ-WW-6z9" id="Kw1-sJ-0gL"/>
                             <outlet property="delegate" destination="lnQ-WW-6z9" id="C0f-WQ-hI2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yi9-fG-kZD"/>
+                    <navigationItem key="navigationItem" title="History" id="yi9-fG-kZD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y04-US-qAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
