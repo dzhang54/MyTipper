@@ -12,18 +12,16 @@ class Meal {
     // MARK: Properties
     
     var date: String
-    var people: Int
+    var people: String
     var rating: Int
-    var totalBill: Double
+    var totalBill: String
     
-    init?(date: String, people: Int, rating: Int, totalBill: Double) {
+    init?(date: String, people: String, rating: Int, totalBill: String) {
         self.date = date
         self.people = people
         self.rating = rating
         self.totalBill = totalBill
-        
-        if totalBill == 0.0 || rating < 0 {
-            return nil
-        }
+       
     }
+    
 }

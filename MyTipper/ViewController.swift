@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var personStepper: UIStepper!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+
     @IBOutlet weak var taxTotalLabel: UILabel!
     
     var meal: Meal?
@@ -29,42 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalLabel.text = "$0.00"
         taxTotalLabel.text = "0.00"
         
-        billField.delegate = self
-        checkValidMealName()
     }
-
-    
-
-    @IBAction func saveButtonPressed(sender: AnyObject) {
-        let totalz = Double(totalLabel.text!)
-        let personz = Int(personStepper.value)
-        let datez = String(NSDate())
-        let ratingz = ratingControl.rating
-        
-        meal = Meal(date: datez, people: personz, rating: ratingz, totalBill: totalz!)
-        
-        let mVC = MealTableViewController()
-        var mealz = mVC.meals
-        mealz.append(meal!)
-        
-    }
-    
-    
-    
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        // Disable the Save button while editing.
-        saveButton.enabled = false
-    }
-    func checkValidMealName() {
-        // Disable the Save button if the text field is empty.
-        let text = billField.text ?? ""
-        saveButton.enabled = !text.isEmpty
-    }
-    func textFieldDidEndEditing(textField: UITextField) {
-        checkValidMealName()
-    }
-
 
     override func viewWillAppear(animated: Bool) {
         // show keyboard
@@ -107,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         tipLabell.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total) + "/" + String(Int(personStepper.value)) + " " + "person(s)"
-        let taxTotal = billAmount + (billAmount * 0.0625) + tip
+        let taxTotal = (billAmount + (billAmount * 0.0625) + tip) / personStepper.value
         taxTotalLabel.text = String(format: "$%.2f", taxTotal) + "/" + String(Int(personStepper.value)) + " " + "person(s)"
         
         

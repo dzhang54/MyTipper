@@ -130,7 +130,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-ST-EZ1" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjd-ST-EZ1" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
                                 <rect key="frame" x="49" y="378" width="240" height="46"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.37414121627807617" green="0.8992735743522644" blue="0.90992468595504761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,7 +153,6 @@
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="top" secondItem="5hx-Ib-ZRt" secondAttribute="bottom" constant="10" id="DJt-Lb-3vq"/>
                             <constraint firstItem="7jb-e7-vgY" firstAttribute="firstBaseline" secondItem="vPw-Pg-QKz" secondAttribute="firstBaseline" id="Egc-dp-339"/>
                             <constraint firstItem="7jb-e7-vgY" firstAttribute="baseline" secondItem="vPw-Pg-QKz" secondAttribute="baseline" id="Gqr-x6-fhd"/>
-                            <constraint firstItem="KYP-u5-t1T" firstAttribute="top" secondItem="qjd-ST-EZ1" secondAttribute="bottom" constant="91" id="HUN-mC-9ju"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="trailing" secondItem="KYP-u5-t1T" secondAttribute="trailing" id="HgN-Gj-z0z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e95-DO-PsP" secondAttribute="trailing" constant="4" id="IF8-NH-SGV"/>
                             <constraint firstItem="vPw-Pg-QKz" firstAttribute="leading" secondItem="7jb-e7-vgY" secondAttribute="trailing" constant="16" id="IeR-fN-qDh"/>
@@ -167,7 +166,6 @@
                             <constraint firstItem="7jb-e7-vgY" firstAttribute="leading" secondItem="iVS-Ew-L14" secondAttribute="leading" id="ee7-pf-Ud5"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="top" secondItem="mTn-XT-yZe" secondAttribute="bottom" constant="8" symbolic="YES" id="ehz-wi-XyP"/>
                             <constraint firstItem="e95-DO-PsP" firstAttribute="top" secondItem="OgF-zs-S6f" secondAttribute="top" id="gjh-RD-FWb"/>
-                            <constraint firstItem="qjd-ST-EZ1" firstAttribute="top" secondItem="7jb-e7-vgY" secondAttribute="bottom" constant="45" id="jQo-iR-qvN"/>
                             <constraint firstItem="dWk-3N-g4X" firstAttribute="leading" secondItem="z8o-JF-i39" secondAttribute="leading" id="tUi-ND-Zjc"/>
                             <constraint firstItem="zRp-sk-cUx" firstAttribute="trailing" secondItem="e95-DO-PsP" secondAttribute="trailing" id="vOc-4g-9Jh"/>
                             <constraint firstAttribute="bottom" secondItem="KYP-u5-t1T" secondAttribute="bottom" constant="20" symbolic="YES" id="vRN-Qm-RQ1"/>
@@ -183,11 +181,6 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="My Tipper" id="7e7-Tp-Ieh">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="0Fg-UG-OTk">
-                            <connections>
-                                <segue destination="bLy-n8-8Ym" kind="unwind" unwindAction="unwindToMealList:" id="GEu-vb-OdS"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="History" id="PVf-z2-b59">
                             <connections>
                                 <segue destination="lnQ-WW-6z9" kind="push" id="Pg0-6D-niC"/>
@@ -198,7 +191,6 @@
                         <outlet property="billField" destination="z8o-JF-i39" id="2i6-P2-aMa"/>
                         <outlet property="personStepper" destination="zRp-sk-cUx" id="bf5-sI-cmy"/>
                         <outlet property="ratingControl" destination="qjd-ST-EZ1" id="XqI-Xh-WQD"/>
-                        <outlet property="saveButton" destination="0Fg-UG-OTk" id="2Aj-DL-iUc"/>
                         <outlet property="taxTotalLabel" destination="vPw-Pg-QKz" id="Yqc-gb-ebZ"/>
                         <outlet property="tipControl" destination="iVS-Ew-L14" id="f6o-Nu-L3K"/>
                         <outlet property="tipLabell" destination="GtU-wP-1UN" id="beU-em-bCA"/>
@@ -206,7 +198,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="bLy-n8-8Ym" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="R7P-CC-KtD">
                     <connections>
                         <action selector="onTap:" destination="BYZ-38-t0r" id="ode-l4-ytk"/>
@@ -276,11 +267,126 @@
                             <outlet property="delegate" destination="lnQ-WW-6z9" id="C0f-WQ-hI2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="History" id="yi9-fG-kZD"/>
+                    <navigationItem key="navigationItem" title="History" id="yi9-fG-kZD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0wl-2g-rVH">
+                            <connections>
+                                <segue destination="Ecu-yX-YNm" kind="push" id="rec-tp-pL5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y04-US-qAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1379" y="355"/>
+        </scene>
+        <!--Add Receipt-->
+        <scene sceneID="vU1-Ob-p4Z">
+            <objects>
+                <exit id="DBC-vg-pqE" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk7-aW-xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Ecu-yX-YNm" customClass="ReceiptViewController" customModule="MyTipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JJ2-0M-DAd"/>
+                        <viewControllerLayoutGuide type="bottom" id="DCu-Fq-lUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Za8-Lj-9oI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bill:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjy-U5-QrK">
+                                <rect key="frame" x="16" y="120" width="69" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="woc-oR-bbF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of People:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH4-x2-vX0">
+                                <rect key="frame" x="16" y="187" width="143" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swl-IA-Knr">
+                                <rect key="frame" x="16" y="257" width="41" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="06e-mQ-ZLl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s5H-lH-SC5">
+                                <rect key="frame" x="203" y="116" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-ne-KyN">
+                                <rect key="frame" x="203" y="183" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuW-1A-9Yn">
+                                <rect key="frame" x="203" y="253" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FU3-gd-PRd" customClass="GoodOrBad" customModule="MyTipper" customModuleProvider="target">
+                                <rect key="frame" x="48" y="391" width="240" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="pjy-U5-QrK" firstAttribute="top" secondItem="JJ2-0M-DAd" secondAttribute="bottom" constant="56" id="HC3-Mf-43B"/>
+                            <constraint firstItem="swl-IA-Knr" firstAttribute="top" secondItem="Za8-Lj-9oI" secondAttribute="top" constant="247" id="I4j-1J-rGs"/>
+                            <constraint firstItem="eH4-x2-vX0" firstAttribute="top" secondItem="pjy-U5-QrK" secondAttribute="bottom" constant="46" id="JB0-Jp-zCE"/>
+                            <constraint firstItem="swl-IA-Knr" firstAttribute="top" secondItem="eH4-x2-vX0" secondAttribute="bottom" constant="39" id="Vm8-OA-K2z"/>
+                            <constraint firstItem="pjy-U5-QrK" firstAttribute="leading" secondItem="swl-IA-Knr" secondAttribute="leading" id="aWg-0x-xl4"/>
+                            <constraint firstItem="pjy-U5-QrK" firstAttribute="leading" secondItem="eH4-x2-vX0" secondAttribute="leading" id="sbP-8P-E9M"/>
+                            <constraint firstItem="pjy-U5-QrK" firstAttribute="leading" secondItem="Za8-Lj-9oI" secondAttribute="leadingMargin" id="tI7-JD-iMu"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wSK-Vk-wtK" appends="YES" id="Ql7-y2-3D2"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Receipt" id="OKy-5u-EZ1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zqe-Vk-fru">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="Ecu-yX-YNm" id="yjV-7X-tb1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0t2-XA-Xud">
+                            <connections>
+                                <segue destination="DBC-vg-pqE" kind="unwind" unwindAction="unwindToMealList:" id="eOU-aw-3Ee"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="QuW-1A-9Yn" id="IGq-8L-mHq"/>
+                        <outlet property="peopleTextField" destination="0rk-ne-KyN" id="1Ik-Qe-I5A"/>
+                        <outlet property="ratingView" destination="FU3-gd-PRd" id="vwu-QW-mcz"/>
+                        <outlet property="saveButton" destination="0t2-XA-Xud" id="OR2-Yz-dzI"/>
+                        <outlet property="totalTextField" destination="s5H-lH-SC5" id="rey-Ht-6x5"/>
+                    </connections>
+                </viewController>
+                <tapGestureRecognizer id="wSK-Vk-wtK">
+                    <connections>
+                        <action selector="onTap:" destination="Ecu-yX-YNm" id="4VP-o1-3Bn"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2324" y="405"/>
         </scene>
         <!--Settings-->
         <scene sceneID="hCf-JT-Poe">
@@ -332,17 +438,6 @@
                                     <action selector="tweetBtn:" destination="2Mb-if-urt" eventType="touchUpInside" id="3Qi-cA-nsM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iH-pT-20O">
-                                <rect key="frame" x="20" y="214" width="156" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="lJ4-gx-Cx1"/>
-                                    <constraint firstAttribute="height" constant="21" id="stT-bZ-joN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pel-Lj-7Ps">
                                 <rect key="frame" x="118" y="400" width="84" height="85"/>
                                 <animations/>
@@ -355,12 +450,6 @@
                                     <action selector="facebookBtn:" destination="2Mb-if-urt" eventType="touchUpInside" id="M69-1e-pSS"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-AD-WTC">
-                                <rect key="frame" x="208" y="210" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.27362419531588622" green="0.94800938441245264" blue="1" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>
@@ -368,19 +457,14 @@
                         <constraints>
                             <constraint firstItem="sJn-bY-guw" firstAttribute="centerX" secondItem="IHJ-bi-YnZ" secondAttribute="centerX" id="8Bp-IS-BRa"/>
                             <constraint firstItem="1E6-Mn-U2K" firstAttribute="top" secondItem="3s5-vN-AAN" secondAttribute="bottom" constant="40" id="JEA-Wp-s5o"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7dv-AD-WTC" secondAttribute="trailing" constant="-1" id="Nt2-24-dJE"/>
                             <constraint firstItem="1E6-Mn-U2K" firstAttribute="leading" secondItem="sJn-bY-guw" secondAttribute="leading" id="OxM-jG-LJP"/>
                             <constraint firstItem="pel-Lj-7Ps" firstAttribute="top" secondItem="KeP-Up-4cO" secondAttribute="bottom" constant="8" symbolic="YES" id="QBW-Lw-GUY"/>
                             <constraint firstItem="KeP-Up-4cO" firstAttribute="trailing" secondItem="pel-Lj-7Ps" secondAttribute="trailing" id="SSW-0g-0vx"/>
                             <constraint firstItem="KeP-Up-4cO" firstAttribute="centerX" secondItem="sJn-bY-guw" secondAttribute="centerX" id="Ua3-UE-vsG"/>
-                            <constraint firstItem="7dv-AD-WTC" firstAttribute="centerY" secondItem="2iH-pT-20O" secondAttribute="centerY" id="YVg-2z-nI7"/>
                             <constraint firstItem="1E6-Mn-U2K" firstAttribute="leading" secondItem="IHJ-bi-YnZ" secondAttribute="leadingMargin" constant="4" id="YcX-5q-miW"/>
-                            <constraint firstItem="7dv-AD-WTC" firstAttribute="leading" secondItem="2iH-pT-20O" secondAttribute="trailing" constant="32" id="a9d-4b-u5X"/>
                             <constraint firstItem="pk6-tx-MJa" firstAttribute="top" secondItem="pel-Lj-7Ps" secondAttribute="bottom" constant="83" id="hq2-g0-z3q"/>
                             <constraint firstItem="KeP-Up-4cO" firstAttribute="leading" secondItem="pel-Lj-7Ps" secondAttribute="leading" id="qDv-Wa-pHD"/>
                             <constraint firstItem="sJn-bY-guw" firstAttribute="top" secondItem="1E6-Mn-U2K" secondAttribute="bottom" constant="19" id="txK-XC-BbM"/>
-                            <constraint firstItem="KeP-Up-4cO" firstAttribute="top" secondItem="2iH-pT-20O" secondAttribute="bottom" constant="72" id="uVQ-jr-wET"/>
-                            <constraint firstItem="2iH-pT-20O" firstAttribute="leading" secondItem="sJn-bY-guw" secondAttribute="leading" id="yZf-2J-pd7"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="13N-w3-AE9" appends="YES" id="Mjj-g5-cbT"/>
@@ -388,7 +472,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="9pv-Z5-ERd"/>
                     <connections>
-                        <outlet property="defaultTaxField" destination="7dv-AD-WTC" id="9tS-qx-2BC"/>
                         <outlet property="tipControl" destination="sJn-bY-guw" id="Oq8-Fk-WIw"/>
                     </connections>
                 </viewController>
@@ -420,11 +503,34 @@
             </objects>
             <point key="canvasLocation" x="113" y="510"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tqh-4O-0EE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Vf-T7-sM5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fOc-5f-chj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ygC-tN-rPx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ecu-yX-YNm" kind="relationship" relationship="rootViewController" id="86Z-iG-JlF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4D-Al-1cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="-22"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Image" width="150" height="150"/>
         <image name="Image-1" width="150" height="150"/>
         <image name="Image-4" width="162" height="162"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rec-tp-pL5"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.16630924201059483" green="0.37354073634073592" blue="1" alpha="0.62621897163120566" colorSpace="calibratedRGB"/>
 </document>

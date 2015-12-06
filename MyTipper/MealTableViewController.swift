@@ -23,9 +23,9 @@ class MealTableViewController: UITableViewController {
         loadSamplePastMeals()
     }
     func loadSamplePastMeals(){
-        let meal1 = Meal(date: "12/1/2015", people: 2, rating: 3, totalBill: 32.20)!
-        let meal2 = Meal(date: "12/2/2015", people: 1, rating: 4, totalBill: 5.60)!
-        let meal3 = Meal(date: "12/3/2015", people: 3, rating: 2, totalBill: 2.00)!
+        let meal1 = Meal(date: "12/1/2015", people: "2", rating: 3, totalBill: "$32.20")!
+        let meal2 = Meal(date: "12/2/2015", people: "1", rating: 4, totalBill: "$5.60")!
+        let meal3 = Meal(date: "12/3/2015", people: "3", rating: 2, totalBill: "$2.00")!
         
         meals += [meal1, meal2, meal3]
     }
@@ -55,8 +55,8 @@ class MealTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.dateLabel.text = meal.date
-        cell.numberOfPeopleLabel.text = String(format: "%.2d people", meal.people)
-        cell.totalBillLabel.text = String(format: "$%.2f", meal.totalBill)
+        cell.numberOfPeopleLabel.text = meal.people
+        cell.totalBillLabel.text = meal.totalBill
         cell.ratingControl.rating = meal.rating
         
         return cell
@@ -108,7 +108,7 @@ class MealTableViewController: UITableViewController {
    // }
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? ViewController, meal = sourceViewController.meal {
+        if let sourceViewController = sender.sourceViewController as? ReceiptViewController, meal = sourceViewController.meal {
             
             // Add a new meal.
             let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
