@@ -4,7 +4,7 @@ My Tipper is a tip calculator application for iOS.
 
 Submitted by: Daniel Zhang
 
-Time spent: 24 hours spent in total
+Time spent: 25 hours spent in total
 
 ## User Stories
 
