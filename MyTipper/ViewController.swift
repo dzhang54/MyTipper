@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var personStepper: UIStepper!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var taxTotalLabel: UILabel!
     
     var meal: Meal?
     
@@ -26,23 +27,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabell.text = "$0.00"
         totalLabel.text = "$0.00"
+        taxTotalLabel.text = "0.00"
         
         billField.delegate = self
         checkValidMealName()
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if  saveButton === sender {
-            let totalz = Double(totalLabel.text!)
-            let personz = Int(personStepper.value)
-            let datez = String(NSDate(timeIntervalSinceNow: 0))
-            let ratingz = ratingControl.rating
-            
-                meal = Meal(date: datez, people: personz, rating: ratingz, totalBill: totalz!)
-            
-            
-        }
 
+    
+
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        let totalz = Double(totalLabel.text!)
+        let personz = Int(personStepper.value)
+        let datez = String(NSDate())
+        let ratingz = ratingControl.rating
+        
+        meal = Meal(date: datez, people: personz, rating: ratingz, totalBill: totalz!)
+        
+        let mVC = MealTableViewController()
+        var mealz = mVC.meals
+        mealz.append(meal!)
+        
     }
+    
+    
+    
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         // Disable the Save button while editing.
         saveButton.enabled = false
@@ -98,6 +107,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         tipLabell.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total) + "/" + String(Int(personStepper.value)) + " " + "person(s)"
+        let taxTotal = billAmount + (billAmount * 0.0625) + tip
+        taxTotalLabel.text = String(format: "$%.2f", taxTotal) + "/" + String(Int(personStepper.value)) + " " + "person(s)"
         
         
         
