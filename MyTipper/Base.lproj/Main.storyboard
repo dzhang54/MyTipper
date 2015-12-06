@@ -113,7 +113,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total with tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jb-e7-vgY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total with tax:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jb-e7-vgY">
                                 <rect key="frame" x="20" y="312" width="107" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -282,8 +282,6 @@
         <!--Add Receipt-->
         <scene sceneID="vU1-Ob-p4Z">
             <objects>
-                <exit id="DBC-vg-pqE" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk7-aW-xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ecu-yX-YNm" customClass="ReceiptViewController" customModule="MyTipper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JJ2-0M-DAd"/>
@@ -380,6 +378,8 @@
                         <outlet property="totalTextField" destination="s5H-lH-SC5" id="rey-Ht-6x5"/>
                     </connections>
                 </viewController>
+                <exit id="DBC-vg-pqE" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk7-aW-xgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="wSK-Vk-wtK">
                     <connections>
                         <action selector="onTap:" destination="Ecu-yX-YNm" id="4VP-o1-3Bn"/>

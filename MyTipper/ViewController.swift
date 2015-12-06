@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var personStepper: UIStepper!
 
     @IBOutlet weak var taxTotalLabel: UILabel!
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     var meal: Meal?
     
@@ -27,7 +28,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabell.text = "$0.00"
         totalLabel.text = "$0.00"
-        taxTotalLabel.text = "0.00"
+        taxTotalLabel.text = "$0.00"
+        
+        
+        let previousChange: NSDate? = defaults.objectForKey("previousChange") as! NSDate?
+        if previousChange != nil {
+            let tenMinutes: NSTimeInterval = NSDate().timeIntervalSinceDate(previousChange!)
+            if Int(tenMinutes) <= 300 {
+                billField.text = (defaults.objectForKey("billAmount") as! String)
+                self.onEditingChanged(self)
+            }
+        }
         
         
     }
@@ -56,7 +67,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
+        let previousChange = NSDate()
+        
         defaults.setObject(billField.text, forKey: "billAmount")
+        defaults.setObject(previousChange, forKey: "previousChange")
         defaults.synchronize()
         var total = 0.0
         personStepper.minimumValue = 1
