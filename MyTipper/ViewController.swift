@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalLabel.text = "$0.00"
         taxTotalLabel.text = "0.00"
         
+        
     }
 
     override func viewWillAppear(animated: Bool) {
