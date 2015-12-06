@@ -21,23 +21,29 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+* [x] Can post tweet
+* [x] Update Facebook Status
+* [x] Divide bill by number of people
+* [x] Store a receipt
+* [x] Added app icon
+* [x] Added launch screen
+
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/J0wlDyg' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+This app took me a really long time to implement. This is my very first app and I had to go though a lot of stack overlflow forums as well as a lot of the Apple developer libraries. For the most part, I spent a really long time trying to implement the settings page, and spent a lot of time trying to implement a storage function. I'd definitely still like to update this application as I get more and more knowledagble with XCode and Swift. 
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2015 Daniel Zhang
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
