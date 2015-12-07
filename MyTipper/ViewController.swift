@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalLabel.text = "$0.00"
         taxTotalLabel.text = "$0.00"
         
-        
+        // This ma
         let previousChange: NSDate? = defaults.objectForKey("previousChange") as! NSDate?
         if previousChange != nil {
             let tenMinutes: NSTimeInterval = NSDate().timeIntervalSinceDate(previousChange!)
